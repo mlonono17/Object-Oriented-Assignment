@@ -1,0 +1,46 @@
+class Player:
+    def __init__(self, playerName, playerPosition):
+        self.playerName = playerName
+        self.playerPosition = playerPosition
+
+    def __str__(self):
+        return f"{self.playerName} ({self.playerPosition})"
+
+
+class NFLTeam:
+    def __init__(self, teamName):
+        self.teamName = teamName
+        self.playerList = []
+
+    def addPlayer(self, player):
+        self.playerList.append(player)
+
+    def displayTeam(self):
+        print(f"Team Name: {self.teamName}")
+        print("Players:")
+        for player in self.playerList:
+            print(f"- {player}")
+
+
+def main():
+    # Create 4 players using the test data
+    player1 = Player("Joe Montana", "QB")
+    player2 = Player("Barry Sanders", "RB")
+    player3 = Player("Jerry Rice", "WR")
+    player4 = Player("Graham Gano", "K")
+
+    # Create an NFLTeam
+    my_team = NFLTeam("San Francisco 49ers")
+
+    # Add players to the team's playerList
+    my_team.addPlayer(player1)
+    my_team.addPlayer(player2)
+    my_team.addPlayer(player3)
+    my_team.addPlayer(player4)
+
+    # Output the team name and all its players
+    my_team.displayTeam()
+
+
+if __name__ == "__main__":
+    main()
